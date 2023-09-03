@@ -583,7 +583,3 @@ function validateBtn() {
     submitBtn.setAttribute("disabled", "true");
   }
 }
-
-var x = "aya ebrahim";
-var y = x.split("");
-y.join("");
