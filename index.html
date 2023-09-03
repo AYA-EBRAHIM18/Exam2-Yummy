@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy Exam2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,200;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="imgs/logo.png" type="image/icon type" />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div
+      class="loading position-fixed top-0 start-0 end-0 vh-100 justify-content-center align-items-center"
+    >
+      <i class="fa-solid fa-spinner fa-spin fa-5x text-white"></i>
+    </div>
+    <!-- Loading screen -->
+
+    <!-- NAV BAR -->
+    <div class="menu position-fixed vh-100 top-0 d-flex">
+      <div class="side-bar text-white p-4">
+        <div
+          class="frame d-flex flex-column justify-content-between min-vh-100"
+        >
+          <div class="links overflow-hidden">
+            <ul class="list-unstyled mt-2">
+              <li
+                id="searchBtn"
+                class="position-relative"
+                onclick="showSearchInput()"
+              >
+                Search
+              </li>
+              <li
+                id="categoryBtn"
+                class="position-relative"
+                onclick="getCategory()"
+              >
+                Categories
+              </li>
+              <li id="areaBtn" class="position-relative" onclick="getArea()">
+                Area
+              </li>
+              <li
+                id="ingredientBtn"
+                class="position-relative"
+                onclick="getIngredient()"
+              >
+                Ingredients
+              </li>
+              <li
+                id="contactBtn"
+                class="position-relative"
+                onclick="showContact()"
+              >
+                Contact Us
+              </li>
+            </ul>
+          </div>
+          <div class="nav-footer pb-5">
+            <div class="icons d-flex gap-1 pb-1">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            Copyright Â© 2019 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+      <div
+        class="side-nav bg-white text-black d-flex flex-column justify-content-between align-items-center py-4"
+      >
+        <img src="imgs/logo.png" alt="logo" />
+        <i class="fa-solid open-icon fa-2x fa-align-justify"></i>
+        <div class="end-icons">
+          <i class="fa-solid fa-globe d-block"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+    <!-- NAV BAR -->
+
+    <!-- main -->
+    <!-- <main>
+      <div class="container my-5">
+        <div class="row"></div>
+      </div>
+    </main> -->
+    <!-- main -->
+
+    <!-- Recipe section -->
+    <!-- <div class="container my-5">
+      <div class="row g-4" id="resData"></div>
+    </div> -->
+
+    <!-- Recipe section -->
+
+    <!-- Category section -->
+    <!-- <section>
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="category-dish position-relative overflow-hidden">
+              <img
+                src="imgs/58oia61564916529.jpg"
+                class="w-100 rounded-2"
+                alt=""
+              />
+              <div
+                class="layer position-absolute d-flex flex-column justify-content-center align-items-center bottom-0 start-0 end-0 rounded-2 p-2"
+              >
+                <h3>Corba</h3>
+                <p>
+                  Beef is the culinary name for meat from cattle, particularly
+                  skeletal muscle. Humans have been eating beef since
+                  prehistoric times.[1]
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Category section -->
+
+    <!-- AREA Section -->
+    <!-- <div class="container my-5 w-75">
+      < class="row">
+        <div class="col-md-3">
+          <div class="box d-flex flex-column text-center text-white">
+            <i class="fa-solid fa-house-laptop fa-4x"></i>
+            <h3>American</h3>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- AREA Section -->
+
+    <!-- Ingredients Section -->
+    <!-- <div class="container my-5">
+      <div class="row">
+        <div class="col-md-3">
+          <div
+            class="ingredient d-flex flex-column justify-content-center align-items-center text-white text-center"
+          >
+            <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+            <h3>Chicken</h3>
+            <p>
+              The chicken is a type of domesticated fowl, a subspecies of the
+              red junglefowl (Gallus gallus). It is one of
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Ingredients Section -->
+
+    <!-- Contact Us section -->
+    <!-- <div
+      class="container my-5 vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="w-75 m-auto">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="input d-flex flex-column">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your name"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2"
+              >
+                Special characters and numbers not allowed
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2"
+              >
+                Special characters and numbers not allowed
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your phone"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2"
+              >
+                Enter a valid phone number
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your age"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2 py-2"
+              >
+                Enter valid age
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your password"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2"
+              >
+                Enter valid password *Minimum eight characters, at least one
+                letter and one number:*
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="input">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Re-password"
+              />
+              <div
+                class="alert alert-danger d-none text-center rounded-2 text-danger mt-2"
+              >
+                Enter valid Re-password
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              disabled="true"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Contact Us section -->
+    <!-- SEARCH SECTION -->
+    <div class="container my-5 w-75" id="searchDish"></div>
+    <div class="container my-5 position-relative">
+      <div
+        class="row-loading position-absolute top-0 start-0 end-0 vh-100 justify-content-center align-items-center"
+        style="display: none"
+      >
+        <i class="fa-solid fa-spinner fa-spin fa-5x text-white"></i>
+      </div>
+      <div class="row g-3 my-5" id="resData"></div>
+    </div>
+    <!-- SEARCH SECTION -->
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/201e436313.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

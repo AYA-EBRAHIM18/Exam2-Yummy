@@ -1,0 +1,94 @@
+body {
+  background-color: #0d0d0d;
+  overflow: hidden;
+}
+.loading {
+  background-color: #0d0d0d;
+  display: flex;
+  z-index: 99999;
+}
+.row-loading {
+  background-color: #0d0d0d;
+  display: flex;
+  z-index: 99;
+}
+.menu {
+  z-index: 9999;
+}
+.links ul li {
+  top: 300px;
+}
+.side-bar {
+  width: 270px;
+  background-color: #0d0d0d;
+}
+.side-bar ul li {
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+.side-nav {
+  width: 70px;
+}
+.side-nav img {
+  width: 50px;
+}
+i {
+  cursor: pointer;
+}
+
+.dish {
+  cursor: pointer;
+}
+.layer {
+  background-color: rgba(255, 255, 255, 0.7);
+  top: 140%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.dish:hover .layer {
+  top: 0;
+}
+.category-dish {
+  overflow: hidden;
+}
+.category-dish:hover .layer {
+  top: 0;
+}
+
+/* recsipe */
+.details ul li {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+/* area */
+.box {
+  cursor: pointer;
+}
+
+/* category */
+.category-dish {
+  cursor: pointer;
+}
+
+/* Ingredient */
+.ingredient {
+  cursor: pointer;
+}
+/* contact */
+.alert {
+  height: 70px;
+}
+.alert p {
+  padding: 10px 10px;
+}
+
+/* search */
+#searchDish input::placeholder {
+  color: white;
+  opacity: 0.5;
+}
