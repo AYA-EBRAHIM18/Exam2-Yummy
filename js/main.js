@@ -495,7 +495,6 @@ function nameValidation() {
   nameRegex = /^[a-zA-Z ]+$/;
   if (nameRegex.test(name.value) == false) {
     document.querySelector(".name-alert").classList.replace("d-none", "d-flex");
-    console.log("i worked --");
   } else {
     document.querySelector(".name-alert").classList.replace("d-flex", "d-none");
     return true;
