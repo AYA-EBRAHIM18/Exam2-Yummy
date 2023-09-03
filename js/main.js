@@ -350,13 +350,6 @@ async function getMealByArea(term) {
   }
 }
 
-let nameFlag = false;
-let emailFlag = false;
-let phoneFlag = false;
-let ageFlag = false;
-let passFlag = false;
-let rePassFlag = false;
-
 function showContact() {
   searchInputs.innerHTML = "";
   closeNav();
@@ -476,24 +469,24 @@ function showContact() {
     </div>
   </div>
 </div>`;
-  document.querySelector("#name").addEventListener("focus", () => {
-    nameFlag = true;
+  document.querySelector("#name").addEventListener("change", () => {
+    nameValidation();
   });
 
-  document.querySelector("#email").addEventListener("focus", () => {
-    emailFlag = true;
+  document.querySelector("#email").addEventListener("change", () => {
+    emailValidation();
   });
-  document.querySelector("#phone").addEventListener("focus", () => {
-    phoneFlag = true;
+  document.querySelector("#phone").addEventListener("change", () => {
+    phoneValidation();
   });
-  document.querySelector("#age").addEventListener("focus", () => {
-    ageFlag = true;
+  document.querySelector("#age").addEventListener("change", () => {
+    ageValidation();
   });
-  document.querySelector("#password").addEventListener("focus", () => {
-    passFlag = true;
+  document.querySelector("#password").addEventListener("change", () => {
+    passValidation();
   });
-  document.querySelector("#re-pass").addEventListener("focus", () => {
-    rePassFlag = true;
+  document.querySelector("#re-pass").addEventListener("change", () => {
+    rePassValidation();
   });
 }
 
@@ -576,37 +569,18 @@ function rePassValidation() {
 }
 
 function validateBtn() {
-  if (nameFlag) {
-    nameValidation();
-  }
-  if (emailFlag) {
-    emailValidation();
-  }
-  if (phoneFlag) {
-    phoneValidation();
-  }
-  if (ageFlag) {
-    ageValidation();
-  }
-  if (passFlag) {
-    passValidation();
-  }
-  if (rePassFlag) {
-    rePassValidation();
-  }
-  let submitContact = document.querySelector("#submitContact");
-
+  let submitBtn = document.querySelector("#submitContact");
   if (
     nameValidation() &&
     emailValidation() &&
     phoneValidation() &&
     ageValidation() &&
-    passwordValidation() &&
-    repassValidation()
+    passValidation() &&
+    rePassValidation() == true
   ) {
-    submitContact.removeAttribute("disabled");
+    submitBtn.removeAttribute("disabled");
   } else {
-    submitContact.setAttribute("disabled", true);
+    submitBtn.setAttribute("disabled", "true");
   }
 }
 
